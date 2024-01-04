@@ -11,8 +11,10 @@ A simple React app that allows users to search for weather information in differ
 ## Technologies Used
 
 - React
-- [Weather API](#) (Replace with the actual API you are using)
-- [axios](https://github.com/axios/axios) for making HTTP requests
+- [Weather API](https://openweathermap.org/api)
+- fetch for making HTTP requests
+- Bootstrap
+- Tailwind
 
 ## Installation
 
