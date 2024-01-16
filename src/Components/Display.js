@@ -5,10 +5,10 @@ import { apiUrl } from './Api'
 import SearchPage from './Search';
 
 function Display() {
-    const [displayValue, setDisplayValue] = useState('0')
     const[data, setData]= useState(null)
-    const[city, setCity]= useState("")
-    const inputRef = useRef(null)
+    const[city, setCity]= useState("Nairobi")
+    const[loading, setLoading]= useState(true)
+    const[error, setError]= useState(null)
     const api= apiKey
     const url= apiUrl
     // console.log(url)
@@ -20,21 +20,45 @@ function Display() {
 
     useEffect(()=>{
       const fetchData= async ()=>{
-        await fetch(`${url}${city}&appid=${api}`)
-        .then((response)=> response.json())
-        .then((data)=>{
-          // console.log(data)
-          setData(data)
-        })
+        try{
+          await fetch(`${url}${city}&appid=${api}`)
+          .then((response)=> response.json())
+          .then((data)=>{
+            // console.log(data)
+            setData(data)
+          })
+        }
+        catch(err){
+          setError('Error! City not found')
+        }
+        finally{
+          setLoading(false)
+        }
+        
       }
       fetchData()
-    },[city])
+    },[city, apiKey])
     // console.log(data)
-
+    if (loading) {
+      return <p>Loading...</p>;
+    }
+  
+    if (error) {
+      return <p>Error: {error}</p>;
+    }
     
   return (
     <div>
-      <SearchPage callback={searchTerm}/>
+      <div>
+        <SearchPage callback={searchTerm}/>
+      </div>
+      <div>
+        <h1>{data.name}, {data.sys.country}</h1>
+          <p>Temperature: {data.main.temp} K</p>
+          <p>Feels like: {data.main.feels_like} K</p>
+          <p>Humidity: {data.main.humidity}%</p>
+          <p>Wind speed: {data.wind.speed} m/s</p>
+      </div>
     </div>
   )
 }
