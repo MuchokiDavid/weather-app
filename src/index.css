@@ -10,11 +10,27 @@ body {
   -webkit-font-smoothing: antialiased;
   /* background-image: url("./img/bgimg.jpg"); */
   -moz-osx-font-smoothing: grayscale;
-  /* background-image: url("./img/funnywp.jpg"); */
-  background: url('https://cdn.pixabay.com/photo/2013/08/06/05/27/clouds-170135_1280.jpg');
+  position: relative;
+  /* background: url('https://cdn.pixabay.com/photo/2013/08/06/05/27/clouds-170135_1280.jpg'); */
   /* height: 100vh; */
-  /* background-repeat: no-repeat; */
-  background-size: cover;
+  /* background-repeat:no-repeat; */
+  /* background-size: cover; */
+  /* -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  filter:blur(5px) */
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: url('https://cdn.pixabay.com/photo/2013/08/06/05/27/clouds-170135_1280.jpg') center/cover no-repeat;
+  filter: blur(2px); /*Adjust the blur value as needed*/
+  z-index: -1;
 }
 
 @media screen and (max-width: 768px) {
@@ -25,7 +41,9 @@ body {
 @media screen and (min-width: 768px) and (max-width: 1023px) {
   body {
     background-size: 100% auto;
+    background-image: -o-repeating-linear-gradient();
   }
+  
 }
 
 @media screen and (min-width: 1024px) {

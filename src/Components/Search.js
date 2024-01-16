@@ -21,13 +21,13 @@ function Search({callback}) {
         <Form className="d-flex" >
             <Form.Control
               type="search"
-              placeholder="Search"
+              placeholder="Search City..."
               className="me-2"
               aria-label="Search"
               onChange={(e) => setSearch(e.target.value)}
             />
             <Button onClick={handleSubmit}>
-              Search
+              Search 
             </Button>
           </Form>
     </div>
