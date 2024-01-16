@@ -10,6 +10,11 @@ body {
   -webkit-font-smoothing: antialiased;
   /* background-image: url("./img/bgimg.jpg"); */
   -moz-osx-font-smoothing: grayscale;
+  /* background-image: url("./img/funnywp.jpg"); */
+  background-image: url('https://cdn.pixabay.com/photo/2013/08/06/05/27/clouds-170135_1280.jpg');
+  /* height: 100vh; */
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 code {

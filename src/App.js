@@ -16,7 +16,7 @@ function App() {
     // };
   
   return (
-    <div className="App bg-cover" style={{backgroundImage: "url('https://cdn.pixabay.com/photo/2013/08/06/05/27/clouds-170135_1280.jpg')", height: "100vh"}}>
+    <div className="App">
       <div className="container mx-auto">
         <Header/>
         <Display/>

@@ -38,7 +38,7 @@ function Display() {
       }
       fetchData()
     },[city, apiKey])
-    // console.log(data)
+    console.log(data)
     if (loading) {
       return <p>Loading...</p>;
     }
@@ -52,9 +52,10 @@ function Display() {
       <div>
         <SearchPage callback={searchTerm}/>
       </div>
-      <div>
+      <div className='mt-12'>
         <h1>{data.name}, {data.sys.country}</h1>
-          <p>Temperature: {data.main.temp} K</p>
+        <p>Weather: {data.weather[0].main}</p>
+          <p>Temperature: {data.main.temp} </p>
           <p>Feels like: {data.main.feels_like} K</p>
           <p>Humidity: {data.main.humidity}%</p>
           <p>Wind speed: {data.wind.speed} m/s</p>
