@@ -2,7 +2,6 @@
 import './App.css';
 import Display from './Components/Display';
 import Footer from './Components/Footer';
-import SearchPage from './Components/Search';
 
 function App() {
     // const myStyle = {
@@ -18,7 +17,7 @@ function App() {
   return (
     <div className="App bg-cover" style={{backgroundImage: "url('https://cdn.pixabay.com/photo/2013/08/06/05/27/clouds-170135_1280.jpg')", height: "100vh"}}>
       <div className="container mx-auto">
-        <SearchPage/>
+        
         <Display/>
         <Footer/>
       </div>

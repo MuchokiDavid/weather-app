@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import {
     Form,
     FormControl,
@@ -8,8 +8,14 @@ import {
     Row,
     Col,
   } from "react-bootstrap";
+function Search({callback}) {
+  const[search, setSearch]= useState("")
 
-function Search() {
+  function handleSubmit(e) {
+    e.preventDefault()
+    callback(search)
+  }
+  // console.log(search)
   return (
     <div>
         <Form className="d-flex">
@@ -18,8 +24,9 @@ function Search() {
               placeholder="Search"
               className="me-2"
               aria-label="Search"
+              onChange={(e) => setSearch(e.target.value)}
             />
-            <Button>
+            <Button onClick={handleSubmit}>
               Search
             </Button>
           </Form>
