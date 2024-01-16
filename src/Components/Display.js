@@ -47,6 +47,8 @@ function Display() {
       return <p>Error: {error}</p>;
     }
     
+  const kelvinToDegrees= 5/9*(data.main.temp-32)
+  const feels_likeTemp= 5/9*(data.main.feels_like-32)
   return (
     <div>
       <div>
@@ -55,8 +57,9 @@ function Display() {
       <div className='mt-12'>
         <h1>{data.name}, {data.sys.country}</h1>
         <p>Weather: {data.weather[0].main}</p>
-          <p>Temperature: {data.main.temp} </p>
-          <p>Feels like: {data.main.feels_like} K</p>
+          <p>Temperature: {kelvinToDegrees.toFixed(1)}°C</p>
+          {/* <p>Temp: {data.main.temp}</p> */}
+          <p>Feels like: {feels_likeTemp.toFixed(1)} °C</p>
           <p>Humidity: {data.main.humidity}%</p>
           <p>Wind speed: {data.wind.speed} m/s</p>
       </div>
