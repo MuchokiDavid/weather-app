@@ -18,7 +18,7 @@ function Search({callback}) {
   // console.log(search)
   return (
     <div>
-        <Form className="d-flex">
+        <Form className="d-flex" >
             <Form.Control
               type="search"
               placeholder="Search"

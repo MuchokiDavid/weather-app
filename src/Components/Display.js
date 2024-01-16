@@ -20,7 +20,7 @@ function Display() {
 
     useEffect(()=>{
       const fetchData= async ()=>{
-        fetch(`${url}${city}&appid=${api}`)
+        await fetch(`${url}${city}&appid=${api}`)
         .then((response)=> response.json())
         .then((data)=>{
           // console.log(data)
@@ -28,8 +28,8 @@ function Display() {
         })
       }
       fetchData()
-    },[])
-    console.log(data)
+    },[city])
+    // console.log(data)
 
     
   return (
