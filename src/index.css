@@ -11,10 +11,27 @@ body {
   /* background-image: url("./img/bgimg.jpg"); */
   -moz-osx-font-smoothing: grayscale;
   /* background-image: url("./img/funnywp.jpg"); */
-  background-image: url('https://cdn.pixabay.com/photo/2013/08/06/05/27/clouds-170135_1280.jpg');
+  background: url('https://cdn.pixabay.com/photo/2013/08/06/05/27/clouds-170135_1280.jpg');
   /* height: 100vh; */
-  background-repeat: no-repeat;
+  /* background-repeat: no-repeat; */
   background-size: cover;
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    background-size: cover;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  body {
+    background-size: 100% auto;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  body {
+    background-size: 100% auto;
+  }
 }
 
 code {
