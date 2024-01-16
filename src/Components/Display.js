@@ -34,7 +34,7 @@ function Display() {
             setData(data)
         }
         catch(err){
-          setError('Error! City not found')
+          setError('Error! City not found!!!!!')
         }
         finally{
           setLoading(false)
@@ -52,7 +52,7 @@ function Display() {
       return <p>Error: {error}</p>;
     }
     
-  const kelvinToDegrees= 5/9*(data.main.temp-32)
+  const kelvinToDegrees= (data.main.temp-273)
   // const feels_likeTemp= 5/9*(data.main.feels_like-32)
   return (
     <div>
