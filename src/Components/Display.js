@@ -24,12 +24,14 @@ function Display() {
     useEffect(()=>{
       const fetchData= async ()=>{
         try{
-          await fetch(`${url}${city}&appid=${api}`)
-          .then((response)=> response.json())
-          .then((data)=>{
+          const response= await fetch(`${url}${city}&appid=${api}`)
+          if (!response.ok) {
+            throw new Error('Network response was not ok');
+          }
+          // .then((response)=> response.json())
+          const data = await response.json();
             // console.log(data)
             setData(data)
-          })
         }
         catch(err){
           setError('Error! City not found')
