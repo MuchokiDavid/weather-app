@@ -15,6 +15,11 @@ function Search({callback}) {
     e.preventDefault()
     callback(search)
   }
+  function handleKey(event){
+    if (event.key === 'Enter'){
+      handleSubmit(event);
+    }
+  }
   // console.log(search)
   return (
     <div>
@@ -25,6 +30,7 @@ function Search({callback}) {
               className="me-2"
               aria-label="Search"
               onChange={(e) => setSearch(e.target.value)}
+              onKeyDown={handleKey}
             />
             <Button onClick={handleSubmit}>
               Search 
