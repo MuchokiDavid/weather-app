@@ -35,7 +35,8 @@ function Display() {
             setData(data)
         }
         catch(err){
-          setError('Error! City not found!!!!!')
+          // setError('Error! City not found!!!!!')
+          alert("City not found")
         }
         finally{
           setLoading(false)
