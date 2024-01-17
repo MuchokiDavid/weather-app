@@ -103,7 +103,7 @@ function Display() {
           <tr>
             <td>5</td>
             <td>Coordinates</td>
-            <td>Long: {data.coord.lon} Lat: {data.coord.lat}</td>
+            <td>Long: {data.coord.lon}° , Lat: {data.coord.lat}°</td>
           </tr>
         </tbody>
       </Table>
