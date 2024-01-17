@@ -29,7 +29,7 @@ body::before {
   bottom: 0;
   left: 0;
   background: url('https://cdn.pixabay.com/photo/2013/08/06/05/27/clouds-170135_1280.jpg') center/cover no-repeat;
-  filter: blur(2px);
+  filter: blur(10px);
   z-index: -1;
 }
 

@@ -6,6 +6,7 @@ import SearchPage from './Search';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import { Table } from 'react-bootstrap';
 
 function Display() {
     const[data, setData]= useState(null)
@@ -61,20 +62,58 @@ function Display() {
       </div>
       <div className='mt-12'>
       <Container>
-        <Row>
+      <Row>
           <Col>
             <h1 className='text-white'>{data.name}, {data.sys.country}</h1>
           </Col>
         </Row>
         <Row>
+        {/* <img src='/assets/clouds.png' alt='cloudy'width="100" height="100"/> */}
           <h2 className='text-white'>{data.weather[0].main}</h2>
         </Row>
+      <Table striped bordered hover>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Condition</th>
+            <th>Measurement</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Weather</td>
+            <td>{data.weather[0].description}</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Temperature</td>
+            <td>{kelvinToDegrees.toFixed(1)}°C</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>Humidity</td>
+            <td>{data.main.humidity}%</td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>Wind Speed</td>
+            <td>{data.wind.speed}m/s</td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td>Coordinates</td>
+            <td>Long: {data.coord.lon} Lat: {data.coord.lat}</td>
+          </tr>
+        </tbody>
+      </Table>
+{/*         
+        
         <Row>
           <Col>
+          
             <h3 className='text-white'>Temperature</h3>
             <p className='text-white'>{kelvinToDegrees.toFixed(1)}°C</p>
-            {/* <p>Temp: {data.main.temp}</p> */}
-            {/* <p>Feels like: {feels_likeTemp.toFixed(1)} °C</p> */}
           </Col>
           <Col>
               <h3 className='text-white'>Humidity</h3>
@@ -84,7 +123,7 @@ function Display() {
             <h3 className='text-white'>Wind speed</h3>
             <p className='text-white'>{data.wind.speed} m/s</p>
           </Col>
-        </Row>
+        </Row> */}
       </Container>
           
           
