@@ -75,34 +75,28 @@ function Display() {
       <Table striped bordered hover>
         <thead>
           <tr>
-            <th>#</th>
             <th>Condition</th>
             <th>Measurement</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td>1</td>
             <td>Weather</td>
             <td>{data.weather[0].description}</td>
           </tr>
           <tr>
-            <td>2</td>
             <td>Temperature</td>
             <td>{kelvinToDegrees.toFixed(1)}°C</td>
           </tr>
           <tr>
-            <td>3</td>
             <td>Humidity</td>
             <td>{data.main.humidity}%</td>
           </tr>
           <tr>
-            <td>4</td>
             <td>Wind Speed</td>
             <td>{data.wind.speed}m/s</td>
           </tr>
           <tr>
-            <td>5</td>
             <td>Coordinates</td>
             <td>Long: {data.coord.lon.toFixed(1)}° , Lat: {data.coord.lat.toFixed(1)}°</td>
           </tr>
